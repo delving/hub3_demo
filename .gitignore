@@ -1,0 +1,26 @@
+*.pyc
+*.pyo
+*.db
+*.iml
+.DS_Store
+.coverage
+output/*
+local_settings.py
+nave/.cache
+nave/static/*
+*.ipynb
+nave/media/*
+nave/admin_backups/*
+nave/theme/static/less/*
+nave/functional_tests/screendumps/*
+.idea/*
+docs/_build/*
+.ipynb_checkpoints
+nave/debug.log
+*~
+nave/wsgi.py
+.tox/
+*.mo
+# !nave/projects/vagrant/*
+# nave/projects/*/*
+.vagrant
