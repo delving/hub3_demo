@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
   config.vm.provider :virtualbox do |vb|
-      vb.name = projectname
+    vb.name = "#{projectname}"
   end
 
   # Disable automatic box update checking. If you disable this, then
@@ -29,22 +29,22 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
 
-  # Narthex Play development
-  config.vm.network "forwarded_port", guest: 9000, host: 9000
-  # Django development
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
-  # Postgresql
-  config.vm.network "forwarded_port", guest: 5432, host: 5432
-  # Elasticsearch
-  config.vm.network "forwarded_port", guest: 9200, host: 9200
-  # Elasticsearch Cluster Manager
-  config.vm.network "forwarded_port", guest: 9300, host: 9300
-  # Apache Fuseki
-  config.vm.network "forwarded_port", guest: 3030, host: 3030
-  # Rabbitmq
-  config.vm.network "forwarded_port", guest: 5672, host: 5672
-  # Flower Celery Monitor
-  config.vm.network "forwarded_port", guest: 5555, host: 5555
+  # # Narthex Play development
+  # config.vm.network "forwarded_port", guest: 9000, host: 9000
+  # # Django development
+  # config.vm.network "forwarded_port", guest: 8000, host: 8000
+  # # Postgresql
+  # config.vm.network "forwarded_port", guest: 5432, host: 5432
+  # # Elasticsearch
+  # config.vm.network "forwarded_port", guest: 9200, host: 9200
+  # # Elasticsearch Cluster Manager
+  # config.vm.network "forwarded_port", guest: 9300, host: 9300
+  # # Apache Fuseki
+  # config.vm.network "forwarded_port", guest: 3030, host: 3030
+  # # Rabbitmq
+  # config.vm.network "forwarded_port", guest: 5672, host: 5672
+  # # Flower Celery Monitor
+  # config.vm.network "forwarded_port", guest: 5555, host: 5555
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -95,7 +95,7 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", privileged: false,
-    inline: "source ~/#{projectname}/project/nave/projects/#{projectname}/scripts/fab_install_all.sh"
+                      inline: "source ~/#{projectname}/project/nave/projects/#{projectname}/scripts/fab_install_all.sh"
 
   config.trigger.after :up do
     run_remote  "source /home/vagrant/#{projectname}/project/nave/projects/#{projectname}/scripts/start_app.sh"
