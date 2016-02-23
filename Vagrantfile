@@ -6,7 +6,8 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
-projectname = "vagrant"
+projectname = "demo"
+ip_adress = "192.168.33.10"
 
 Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
@@ -48,7 +49,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "#{ip_adress}"
   config.vm.hostname = "#{projectname}.localhost"
   config.hostsupdater.aliases = ["data.#{projectname}.localhost"]
 
