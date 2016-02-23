@@ -4,7 +4,7 @@
 
 set -e
 
-PROJECT_NAME="vagrant"
+PROJECT_NAME="demo"
 LOCALE="en_US.UTF-8"
 
 export LC_ALL=${LOCALE}
