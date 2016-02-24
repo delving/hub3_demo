@@ -29,9 +29,9 @@ DATABASES = {
         # DB name or path to database file if using sqlite3.
         "NAME": "{}".format(SITE_NAME),
         # Not used with sqlite3.
-        "USER": "zemyatin",
+        "USER": "{}".format(SITE_NAME),
         # Not used with sqlite3.
-        "PASSWORD": "room-dait",
+        "PASSWORD": "#9@?[ZMh26VcF3jKwucy4",
         # Set to empty string for localhost. Not used with sqlite3.
         "HOST": "",
         # Set to empty string for default. Not used with sqlite3.

@@ -1,7 +1,8 @@
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
 from search.urls import router
-
+# from projects.demo.views import NarthexRedirect
+from .views import NarthexRedirectView
 
 urlpatterns = patterns(
     '',
@@ -9,5 +10,6 @@ urlpatterns = patterns(
     url(r'^$', 'views.index'),
     # api is loaded here so custom api can be added at the settings level
     url(r'api/', include(router.urls)),
+    url(r'narthex/', NarthexRedirectView.as_view()),
     #url(r'search', FacettedSearchView.as_view()),
 )
