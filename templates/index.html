@@ -2,24 +2,31 @@
 
 {% load staticfiles urls_tags i18n %}
 
-{% block body_class %}static_home{% endblock %}
+{% block body_id %}static_home{% endblock %}
 
 {% block all_content %}
-    <div class="container">
-        <div class="page-header">
-            <img src="{% static 'img/logo.png' %}"/>
+
+    <section class="branding">
+        <div class="container">
+            <img src="{% static 'img/delving-logo-large.png' %}" class="center-block"/>
         </div>
-        <div class="row">
-            <div class="col-md-2 col-md-offset-4">
-                <a href="/search">
-                    Search
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a href="/admin" class="">
-                    Administer
-                </a>
+    </section>
+
+    <section class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-4">
+                    <a href="/search" class="btn btn-info btn-circle btn-xl center-block">
+                        Search
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="/admin" class="btn btn-warning btn-circle btn-xl center-block">
+                        Admin
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
 {% endblock %}

@@ -109,7 +109,7 @@ RDF_STORE_DB = SITE_NAME
 
 RDF_ROUTED_ENTRY_POINTS = ["acc.{}.delving.org".format(SITE_NAME),
                            "prod.{}.delving.eu".format(SITE_NAME),
-                           "{}.localhost".format(SITE_NAME)]
+                           "{}.localhost:8000".format(SITE_NAME)]
 
 ###################
 # Elastic search  #
@@ -128,7 +128,7 @@ ES_ROWS = 20
 #########################
 
 
-NARTHEX_URL = "http://localhost:9000/narthex"
+NARTHEX_URL = "http://{}.localhost/narthex".format(SITE_NAME)
 NARTHEX_API_KEY = "secret"
 
 SCHEMA_REPOSITORY = "http://schemas.delving.eu/"
@@ -180,7 +180,7 @@ FABRIC = {
     "EMAIL_HOST": "mx2.hostice.net",
 
     "SSH_USER": "demo",  # SSH username
-    # "SSH_PASS": "demo",  # SSH password (consider key-based authentication)
+    # "SSH_PASS": "demo@demo",  # SSH password (consider key-based authentication)
     "SSH_KEY_PATH": "~/.ssh/id_rsa",  # Local path to SSH key file, for key-based auth
     "ACC_HOSTS": ["192.168.33.10"],  # List of hosts to deploy to
     "PROD_HOSTS": ["192.168.33.10"],  # List of hosts to deploy to
@@ -196,8 +196,8 @@ FABRIC = {
     "FILE_WATCH_BASE_FOLDER": FILE_WATCH_BASE_FOLDER,
     "RDF_BASE_URL": RDF_BASE_URL,
     "RDF_STORE_HOST": RDF_STORE_HOST,
-    "ORG_ID": "demo",  # The Culture Commons
-    "HUB_NODE": "demo",  # The node this organisation
+    "ORG_ID": ORG_ID,  # The Culture Commons
+    "HUB_NODE": ORG_ID,  # The node this organisation
     "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
 
     "ACC_HOSTNAME": "{}.localhost".format(SITE_NAME),  # Host for public site.
@@ -207,7 +207,7 @@ FABRIC = {
     "GIT_BRANCH": "feature/vagrant_support",
     "SENTRY_DSN": "https://bea553a71cc54834a4f03507a92f02a1:5b093ba2516b49bd85f103f2aa02239e@app.getsentry.com/51537",
     "ES_CLUSTERNAME": SITE_NAME,
-    "DB_PASS": "demo",  # Live database password
+    "DB_PASS": "#9@?[ZMh26VcF3jKwucy4",  # Live database password
     "ADMIN_PASS": "demo",  # Live admin user password
     "SECRET_KEY": SECRET_KEY,
     "NEVERCACHE_KEY": NEVERCACHE_KEY,
@@ -223,7 +223,7 @@ FABRIC = {
 # Django Suit configuration example
 SUIT_CONFIG = {
     # header
-    'ADMIN_NAME': 'Nave Admin',
+    'ADMIN_NAME': 'Hub3 Login',
     # 'HEADER_DATE_FORMAT': 'l, j. F Y',
     # 'HEADER_TIME_FORMAT': 'H:i',
 

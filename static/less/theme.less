@@ -10,6 +10,7 @@
 @gutter-width: 20;
 @columns: 12;
 @total-width: 100%;
+
 /*
 article {
    .column(9);
@@ -27,6 +28,34 @@ aside {
 }
 */
 
+/* custom buttons ******************************/
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 133px;
+  height: 133px;
+  padding: 5px 10px;
+  font-size: 21px;
+  line-height: 133px;
+  border-radius: 67px;
+}
+
 /* base elements ********************************/
 
 body, html {
@@ -34,7 +63,7 @@ body, html {
 }
 
 body {
-  background: @white;
+  background: whitesmoke;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -232,11 +261,20 @@ img {
 }
 
 /* static home **********************************/
-body.static_home {
-  .container, {
-    text-align: center;
+body#static_home {
+  //background: @brand-primary;
+  section.branding {
+    background: @gray-darker;
+    height: 315px;
+    margin-bottom: 85px;
+    padding: 40px 0;
+    width: 100%;
+    img {
+      position: relative;
+    }
   }
-  .page-header {
-    border:none;
+  section.navigation {
+    //background: @brand-primary;
+    padding: 20px 0;
   }
 }
