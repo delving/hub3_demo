@@ -70,6 +70,7 @@ aside {
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 .btn-circle.btn-lg {
   width: 50px;
@@ -265,4 +266,7 @@ body#static_home section.branding img {
 }
 body#static_home section.navigation {
   padding: 20px 0;
+}
+body#static_home .row.second {
+  margin-top: 20px;
 }

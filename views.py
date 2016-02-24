@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
+from django.views.generic import RedirectView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer, BrowsableAPIRenderer
 from rest_framework_jsonp.renderers import JSONPRenderer
@@ -38,3 +39,10 @@ class DefaultSearchListAPIView(SearchListAPIView):
         FacetConfig('dc_type.raw', _("Object type")),
         ]
     filters = []
+
+
+class NarthexRedirectView(RedirectView):
+
+    def get_redirect_url(self, *args, **kwargs):
+        resolve_url = self.request.META["HTTP_HOST"].split(':')[0]
+        return "http://{}/narthex".format(resolve_url)

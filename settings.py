@@ -55,6 +55,7 @@ LANGUAGE_CODE = 'en'
 ALLOWED_HOSTS = ["localhost",
                  "acc.{}.delving.org".format(SITE_NAME),
                  "prod.{}.delving.eu".format(SITE_NAME),
+                 "{}.hub3.delving.org".format(SITE_NAME),
                  "{}.localhost".format(SITE_NAME)]
 
 ########## END SITE CONFIGURATION
@@ -107,9 +108,10 @@ RDF_BASE_URL = "http:/{}.localhost".format(SITE_NAME)
 
 RDF_STORE_DB = SITE_NAME
 
-RDF_ROUTED_ENTRY_POINTS = ["acc.{}.delving.org".format(SITE_NAME),
-                           "prod.{}.delving.eu".format(SITE_NAME),
-                           "{}.localhost:8000".format(SITE_NAME)]
+RDF_ROUTED_ENTRY_POINTS =   ["acc.{}.delving.org".format(SITE_NAME),
+                            "prod.{}.delving.eu".format(SITE_NAME),
+                            "{}.localhost:8000".format(SITE_NAME),
+                            "{}.hub3.delving.org".format(SITE_NAME)]
 
 ###################
 # Elastic search  #
