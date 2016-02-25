@@ -104,7 +104,7 @@ RDF_STORE_PORT = 3030  # Port for triple store HTTP server
 
 RDF_STORE_HOST = "http://localhost"
 
-RDF_BASE_URL = "http:/{}.localhost".format(SITE_NAME)
+RDF_BASE_URL = "demo.hub3.delving.org"
 
 RDF_STORE_DB = SITE_NAME
 
