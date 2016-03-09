@@ -1,7 +1,6 @@
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
 from search.urls import router
-# from projects.demo.views import NarthexRedirect
 from .views import NarthexRedirectView
 
 urlpatterns = patterns(
