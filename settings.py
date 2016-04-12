@@ -47,7 +47,7 @@ path.append(PROJECT_ROOT)
 
 ########## END GENERAL CONFIGURATION
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'en-us'
 
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
