@@ -3,12 +3,13 @@
 
 from os.path import abspath, dirname, sep
 
-from kombu import Queue, Exchange
-
 from django.utils.translation import ugettext_lazy as _
+
+from kombu import Queue, Exchange
 
 # Get the Site name first:
 SITE_NAME = dirname(abspath(__file__)).split(sep)[-1]
+
 print(("Starting with settings from {}".format(SITE_NAME)))
 ##################
 # BASE SETTINGS #
@@ -48,6 +49,24 @@ path.append(PROJECT_ROOT)
 ########## END GENERAL CONFIGURATION
 
 LANGUAGE_CODE = 'en'
+
+LANGUAGES = (
+    ('en', _('English')),
+)
+
+USE_I18N = True
+
+USE_L10N = False
+
+SOLID_I18N_USE_REDIRECTS = False
+
+SOLID_I18N_HANDLE_DEFAULT_PREFIX = True
+
+SOLID_I18N_DEFAULT_PREFIX_REDIRECT = True
+
+ROSETTA_MESSAGES_PER_PAGE = 100
+
+ROSETTA_AUTO_COMPILE = True
 
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
@@ -95,6 +114,7 @@ PROJECT_APPS = (
 INSTALLED_APPS = PROJECT_APPS + INSTALLED_APPS
 ########## END APP CONFIGURATION
 
+USE_WAGTAIL_CMS = False
 
 ##########################
 # RDF store configuration #
@@ -113,6 +133,8 @@ RDF_ROUTED_ENTRY_POINTS =   ["acc.{}.delving.org".format(SITE_NAME),
                             "{}.localhost:8000".format(SITE_NAME),
                             "{}.hub3.delving.org".format(SITE_NAME)]
 
+RDF_STORE_TRIPLES = False
+
 ###################
 # Elastic search  #
 ###################
@@ -129,6 +151,7 @@ ES_ROWS = 20
 # DataSet configuration #
 #########################
 
+BULK_API_ASYNC = True
 
 NARTHEX_URL = "http://{}.localhost/narthex".format(SITE_NAME)
 NARTHEX_API_KEY = "secret"
