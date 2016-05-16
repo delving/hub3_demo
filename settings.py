@@ -181,10 +181,10 @@ NEVERCACHE_KEY = "uj$_u7wg34ufb3zdv_*bcd@2s+e43eu^+!890vf$m*)gw8rg13"
 FABRIC = {
     "EMAIL_HOST": "mx2.hostice.net",
     "SSH_USER": "demo",  # SSH username
-    # "SSH_PASS": "#9@?[ZMh26VcF3jKw§ucy3!!@d",  # SSH password (consider key-based authentication)
+    # "SSH_PASS": "#",  # SSH password (consider key-based authentication)
     "SSH_KEY_PATH": "~/.ssh/id_rsa",  # Local path to SSH key file, for key-based auth
-    "ACC_HOSTS": ["207.148.248.143"],  # List of hosts to deploy to
-    "PROD_HOSTS": ["demo.hub3.delving.org"],  # List of hosts to deploy to
+    "ACC_HOSTS": [""],  # List of hosts to deploy to
+    "PROD_HOSTS": [""],  # List of hosts to deploy to
 
     "VIRTUALENV_HOME": "/home/{}".format(SITE_NAME),  # Absolute remote path for virtualenvs
     "PROJECT_NAME": "{}".format(SITE_NAME),  # Unique identifier for project
@@ -194,28 +194,29 @@ FABRIC = {
     "NARTHEX_PORT": 9012,  # The port narthex will listen to
     "ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER": ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER,
     "FILE_WATCH_BASE_FOLDER": FILE_WATCH_BASE_FOLDER,
-    "RDF_BASE_URL": "http://demo.hub3.delving.org",
+    "RDF_BASE_URL": RDF_BASE_URL,
     "RDF_STORE_HOST": RDF_STORE_HOST,
     "ORG_ID": ORG_ID,  # The Culture Commons
     "HUB_NODE": ORG_ID,  # The node this organisation
     "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
 
     "ACC_HOSTNAME": "{}.localhost".format(SITE_NAME),  # Host for public site.
-    "PROD_HOSTNAME": "demo.hub3.delving.org prod.{}.delving.org".format(SITE_NAME),  # Host for public site.
+    "PROD_HOSTNAME": "".format(SITE_NAME),  # Host for public site.
 
     "REPO_URL": "https://github.com/delving/nave.git",  # Git or Mercurial remote repo URL for the project
     "PROJECT_REPO_URL": "https://github.com/delving/hub3_demo.git",
     "GIT_BRANCH": "develop",
-    "SENTRY_DSN": "https://bea553a71cc54834a4f03507a92f02a1:5b093ba2516b49bd85f103f2aa02239e@app.getsentry.com/51537",
+    "SENTRY_DSN": "",
     "ES_CLUSTERNAME": SITE_NAME,
-    "DB_PASS": "demo456",  # Live database password
-    "ADMIN_PASS": "demo123",  # Live admin user password
+    "DB_PASS": "",  # Live database password
+    "ADMIN_PASS": "",  # Live admin user password
     "SECRET_KEY": SECRET_KEY,
     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 
-    "ACC_NAVE_AUTH_TOKEN": "4fc894433b3b914356f8a6887b39fcb26f249026",
-    "PROD_NAVE_AUTH_TOKEN": "4fc894433b3b914356f8a6887b39fcb26f249026",
+    "ACC_NAVE_AUTH_TOKEN": "",
+    "PROD_NAVE_AUTH_TOKEN": "",
 }
+
 ####################################
 #    Django Suit Configuration     #
 ####################################
