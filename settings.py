@@ -17,7 +17,7 @@ print(("Starting with settings from {}".format(SITE_NAME)))
 # Allow settings to be shared between all nave projects to be loaded first.
 # The remainder of this settings file contains project specific settings
 try:
-    from base_settings import *
+    from nave.base_settings import *
 except ImportError:
     print("Unable to load the base_settings.py. Please make sure the base_settings.py is on your "
           "sys path")
@@ -40,9 +40,6 @@ PROJECT_DIRNAME = SITE_NAME
 
 PROJECT_ROOT = dirname(abspath(__file__))
 
-# Add our project app to our pythonpath, this way we don't need to type our project
-# name in our dotted import paths:
-path.append(PROJECT_ROOT)
 ########## END PATH CONFIGURATION
 
 ########## END GENERAL CONFIGURATION
@@ -87,7 +84,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 
 # Apps specific for this project go here.
 PROJECT_APPS = (
-    "projects.demo",
+    "nave.projects.demo",
 )
 
 
@@ -137,7 +134,6 @@ SCHEMA_REPOSITORY = "http://schemas.delving.eu/"
 DEFAULT_INDEX_SCHEMA = "icn"
 ENABLED_SCHEMAS = ['abm', 'icn', 'tib']
 ORG_ID = "demo"
-FILE_WATCH_BASE_FOLDER = '/tmp'
 ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER = "/tmp"
 
 #############################
@@ -193,7 +189,6 @@ FABRIC = {
     "GUNICORN_PORT": 8012,  # Port gunicorn will listen on
     "NARTHEX_PORT": 9012,  # The port narthex will listen to
     "ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER": ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER,
-    "FILE_WATCH_BASE_FOLDER": FILE_WATCH_BASE_FOLDER,
     "RDF_BASE_URL": RDF_BASE_URL,
     "RDF_STORE_HOST": RDF_STORE_HOST,
     "ORG_ID": ORG_ID,  # The Culture Commons
