@@ -205,7 +205,6 @@ FABRIC = {
     "EMAIL_HOST": "mx2.hostice.net",
 
     "SSH_USER": "demo",  # SSH username
-    # "SSH_PASS": "1Demo234",  # SSH password (consider key-based authentication)
     "SSH_KEY_PATH": "~/.ssh/id_rsa",  # Local path to SSH key file, for key-based auth
     "ACC_HOSTS": ["207.148.248.143"],  # List of hosts to deploy to
     "PROD_HOSTS": ["demo.hub3.delving.org"],  # List of hosts to deploy to
