@@ -85,6 +85,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # Apps specific for this project go here.
 PROJECT_APPS = (
     "nave.projects.demo",
+    "nave.diw",
 )
 
 
@@ -171,47 +172,6 @@ NEVERCACHE_KEY = "uj$_u7wg34ufb3zdv_*bcd@2s+e43eu^+!890vf$m*)gw8rg13"
 ########## END SECRET CONFIGURATION
 
 
-# These settings are used by the default fabfile.py provided.
-# Check fabfile.py for defaults.
-
-FABRIC = {
-    "EMAIL_HOST": "mx2.hostice.net",
-    "SSH_USER": "demo",  # SSH username
-    # "SSH_PASS": "#",  # SSH password (consider key-based authentication)
-    "SSH_KEY_PATH": "~/.ssh/id_rsa",  # Local path to SSH key file, for key-based auth
-    "ACC_HOSTS": [""],  # List of hosts to deploy to
-    "PROD_HOSTS": [""],  # List of hosts to deploy to
-
-    "VIRTUALENV_HOME": "/home/{}".format(SITE_NAME),  # Absolute remote path for virtualenvs
-    "PROJECT_NAME": "{}".format(SITE_NAME),  # Unique identifier for project
-    "REQUIREMENTS_PATH": "requirements/base.txt",  # Path to pip requir[[ements, relative to project
-    "SETTINGS_PATH": "projects/{}/settings".format(SITE_NAME),  # Path to pip requirements, relative to project
-    "GUNICORN_PORT": 8012,  # Port gunicorn will listen on
-    "NARTHEX_PORT": 9012,  # The port narthex will listen to
-    "ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER": ZIPPED_SEARCH_RESULTS_DOWNLOAD_FOLDER,
-    "RDF_BASE_URL": RDF_BASE_URL,
-    "RDF_STORE_HOST": RDF_STORE_HOST,
-    "ORG_ID": ORG_ID,  # The Culture Commons
-    "HUB_NODE": ORG_ID,  # The node this organisation
-    "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
-
-    "ACC_HOSTNAME": "{}.localhost".format(SITE_NAME),  # Host for public site.
-    "PROD_HOSTNAME": "".format(SITE_NAME),  # Host for public site.
-
-    "REPO_URL": "https://github.com/delving/nave.git",  # Git or Mercurial remote repo URL for the project
-    "PROJECT_REPO_URL": "https://github.com/delving/hub3_demo.git",
-    "GIT_BRANCH": "develop",
-    "SENTRY_DSN": "",
-    "ES_CLUSTERNAME": SITE_NAME,
-    "DB_PASS": "",  # Live database password
-    "ADMIN_PASS": "",  # Live admin user password
-    "SECRET_KEY": SECRET_KEY,
-    "NEVERCACHE_KEY": NEVERCACHE_KEY,
-
-    "ACC_NAVE_AUTH_TOKEN": "",
-    "PROD_NAVE_AUTH_TOKEN": "",
-}
-
 ####################################
 #    Django Suit Configuration     #
 ####################################
@@ -254,7 +214,7 @@ SUIT_CONFIG = {
 # ignored in your version control system allowing for settings to be
 # defined per machine.
 try:
-    from local_settings import *
+    from nave.projects.demo.local_settings import *
 except ImportError:
     print("Unable to load the local_settings.py. Please create one from local_settings.py.template.")
     raise

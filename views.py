@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView
@@ -14,7 +14,7 @@ from nave.base_settings import FacetConfig
 
 
 def index(request):
-    return render_to_response('index.html', context_instance=RequestContext(request))
+    return render(template_name='index.html', request=request)
 
 
 class DefaultSearchListAPIView(SearchListAPIView):
