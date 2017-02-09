@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView
@@ -7,14 +7,14 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer, BrowsableAPIRenderer
 from rest_framework_jsonp.renderers import JSONPRenderer
 
-from search.renderers import XMLRenderer
-from search.serializers import NaveQueryResponseWrapperSerializer
-from search.views import SearchListAPIView
-from base_settings import FacetConfig
+from nave.search.renderers import XMLRenderer
+from nave.search.serializers import NaveQueryResponseWrapperSerializer
+from nave.search.views import SearchListAPIView
+from nave.base_settings import FacetConfig
 
 
 def index(request):
-    return render_to_response('index.html', context_instance=RequestContext(request))
+    return render(template_name='index.html', request=request)
 
 
 class DefaultSearchListAPIView(SearchListAPIView):
